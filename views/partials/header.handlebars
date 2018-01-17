@@ -14,37 +14,45 @@
 
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="{{#eq title 'Home'}} active {{else}} undefined {{/eq}}">
-                    <a href="/"></a>
+                <li class="{{#eq title 'Home'}}active{{else}}undefined{{/eq}}">
+                    <a href="/">Home</a>
                 </li>
-                <li class="{{#eq title 'API Examples'}} active {{else}} undefined {{/eq}}">
-                    <a href="/api"></a>
+                <li class="{{#eq title 'API Examples'}}active{{else}}undefined{{/eq}}">
+                    <a href="/api">API Examples</a>
                 </li>
-                <li class="{{#eq title 'Contact'}} active {{else}} undefined {{/eq}}">
-                    <a href="/contact"></a>
+                <li class="{{#eq title 'Contact'}}active{{else}}undefined{{/eq}}">
+                    <a href="/contact">Contact</a>
                 </li>
                 <li>
-                    <a href="/status"></a>
+                    <a href="/status">Status</a>
                 </li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
                 {{#not user}}
-                    <li class="{{#eq title 'Login'}} active {{else}} undefined {{/eq}}">
-                        <a href="/login"></a>
+                    <li class="{{#eq title 'Login'}}active{{else}}undefined{{/eq}}">
+                        <a href="/login">Login</a>
                     </li>
-                    <li class="{{#eq title 'Create Account'}} active {{else}} undefined {{/eq}}">
-                        <a href="/signup"></a>
+                    <li class="{{#eq title 'Create Account'}}active{{else}}undefined{{/eq}}">
+                        <a href="/signup">Signup</a>
                     </li>
                 {{else}}
-                    <li class="{{#eq title 'Account Management'}} active {{else}} undefined {{/eq}}">
+                    <li class="{{#eq title 'Account Management'}}active{{else}}undefined{{/eq}}">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown">
                             {{#if user.profile.picture}}
                                 <img src="{{user.profile.picture}}">
                             {{else}}
                                 <img src="">
                             {{/if}}
-                            <span>{{user.profile.name || user.email || user.id}}</span>
+                            <span>
+                                {{#if user.profile.name}}
+                                    {{user.profile.name}}
+                                {{else if user.email}}
+                                    {{user.email}}
+                                {{else if user.id}}
+                                    {{user.id}}
+                                {{/if}}
+                            </span>
                             <i class="caret"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -53,7 +61,7 @@
                             </li> 
                             <li class="divider"></li>
                             <li>
-                                <a href="/logout"></a>
+                                <a href="/logout">Logout</a>
                             </li>
                         </ul>
                     </li>
