@@ -43,7 +43,6 @@
     "nodemailer": "^4.0.1",
     "passport": "0.4.0",
     "passport-facebook": "^2.1.1",
-    "passport-github": "^1.1.0",
     "passport-google-oauth": "^1.0.0",
     "passport-local": "^1.0.0",
     "passport-oauth": "^1.0.0",
