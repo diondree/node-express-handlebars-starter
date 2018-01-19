@@ -1,0 +1,44 @@
+<div class="page-header">
+	<h2>
+		<i class="fa fa-paypal" style="color: #1B4A7D"></i>
+		Paypal API
+	</h2>
+</div>
+
+<div class="btn-group btn-group-justified">
+	<a href="https://developer.paypal.com/docs/integration/direct/make-your-first-call/" class="btn btn-primary" target="_blank">
+		<i class="fa fa-check-square-o"></i>
+		Quickstart
+	</a>
+	<a href="https://developer.paypal.com/docs/api/" class="btn btn-primary" target="_blank">
+		<i class="fa fa-code"></i>
+		API Reference
+	</a>
+	<a href="https://devtools-paypal.com/hateoas/index.html" class="btn btn-primary" target="_blank">
+		<i class="fa fa-gear"></i>
+		API Playground
+	</a>
+</div>
+
+<h3>Sample Payment</h3>
+
+{{#if result}}
+	{{#if canceled}}
+		<h3>Payment got canceled!</h3>
+	{{/if}}
+
+	{{#if success}}
+		<h3>Payment got executed successfully!</h3>
+	{{/if}}
+	<a href="/api/paypal">
+		<button class="btn btn-primary">New payment</button>
+	</a>
+{{else}}
+	<div>
+		<p>Redirects to PayPal and allows authorizing the sample payment.</p>
+		<a href="{{approvalUrl}}">
+			<button class="btn btn-primary">Authorize payment</button>
+		</a>
+	</div>
+{{/if}}
+

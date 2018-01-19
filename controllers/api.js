@@ -7,7 +7,6 @@ const stripe = require('stripe')(process.env.STRIPE_SKEY);
 const twilio = require('twilio')(process.env.TWILIO_SID, process.env.TWILIO_TOKEN);
 const clockwork = require('clockwork')({ key: process.env.CLOCKWORK_KEY });
 const paypal = require('paypal-rest-sdk');
-const lob = require('lob')(process.env.LOB_KEY);
 
 /**
  * GET /api
