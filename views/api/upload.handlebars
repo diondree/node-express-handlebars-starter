@@ -1,0 +1,33 @@
+<div class="page-header">
+	<h2>
+		<i class="fa fa-upload"></i>
+		File Upload
+	</h2>
+</div>
+
+<div class="btn-group btn-group-justified">
+	<a href="https://github.com/expressjs/multer" class="btn btn-success" target="_blank">
+		<i class="fa fa-book"></i>
+		Multer Documentation
+	</a>
+	<a href="http://codepen.io/search/pens?q=custom+file+upload&limit=all&type=type-pens" class="btn btn-success" target="_blank">
+		<i class="fa fa-laptop"></i>
+		Customize File Upload
+	</a>
+</div>
+
+<h3>File Upload Form</h3>
+
+<div class="row">
+	<div class="col-sm-6">
+		<p>All files will be uploaded to "/uploads" directory.</p>
+		<form action="POST" role="form" enctype="multipart/form-data">
+			<div class="form-group">
+				<label class="control-label">File Input</label>
+				<input type="file" name="myFile">
+			</div>
+			<button class="btn btn-primary" type="submit">Submit</button>
+		</form>
+	</div>
+</div>
+

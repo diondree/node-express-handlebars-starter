@@ -1,0 +1,66 @@
+<div class="page-header">
+    <h2>
+        <i class="fa fa-twitter" style="color: #4099ff"></i>
+        Twitter API
+    </h2>
+</div>  
+
+<div class="btn-group btn-group-justified">
+    <a href="https://github.com/ttezel/twit" class="btn btn-success" target="_blank">
+        <i class="fa fa-file-text-o"></i>
+        Twit Library Docs
+    </a>
+    <a href="https://dev.twitter.com/docs" class="btn btn-success" target="_blank">
+        <i class="fa fa-check-square-o"></i>
+        Overview
+    </a>
+    <a href="https://dev.twitter.com/rest/public" class="btn btn-success" target="_blank">
+        <i class="fa fa-code-fork"></i>
+        API Endpoints
+    </a>
+</div>
+
+<br>
+
+<div class="well">
+    <h4>Compose new Tweet</h4>
+    <form action="POST" role="form">
+        <input type="hidden" name="_csrf" value="{{_csrf}}">
+        <div class="form-group">
+            <input type="text" name="tweet" class="form-control" autofocus>
+            <p class="help-block">This new Tweet will be posted on your Twitter profile.</p>
+        </div>
+        <button class="btn btn-primary">
+            <i class="fa fa-twitter"></i>
+            Tweet
+        </button>
+    </form>
+</div>
+
+<br>
+
+<div class="lead">
+    Latest
+    <strong>{{tweets.length}}</strong>
+    Tweets containing the term
+    <strong>nodejs</strong>
+    in NYC within
+    <strong>5</strong>
+    miles radius
+</div>
+
+<ul class="media-list">
+    {{#each tweets as tweet}}
+        <li class="media">
+            <a href="#" class="pull-left">
+                <img src="{{tweet.user.profile_image_url.replace('_normal', '')}}" alt="" class="media-object" style="width: 64px; height: 64px;">
+            </a>
+            <div class="media-body">
+                <strong class="media-heading">#{{tweet.user.name}}</strong>
+                <span class="text-muted">@{{tweet.user.screen_name}}</span>
+                <p>{{tweet.text}}</p>
+            </div>
+        </li>
+    {{/each}}
+</ul>
+
